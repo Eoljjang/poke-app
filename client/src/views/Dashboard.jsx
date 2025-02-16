@@ -8,17 +8,22 @@ function Dashboard() {
 
     return(
       <div className="dashboard-content">
-        <div className="col-1-container">
-          <QuickLinks />
+        <QuickNote
+          userData={userData}
+          setUserData={setUserData}
+        />
+
+
+        <div className="col-wrapper">
+          <div className="col-1-container">
+            <RecentNotes />
+          </div>
+          <div className="col-2-container">
+            something
+          </div>
         </div>
 
-        <div className="col-2-container">
-          <QuickNote
-            userData={userData}
-            setUserData={setUserData}
-          />
-          <RecentNotes />
-        </div>
+          
       </div>
     )
 }

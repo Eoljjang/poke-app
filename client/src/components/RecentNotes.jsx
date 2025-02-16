@@ -36,8 +36,8 @@ function RecentNotes(){
         })
     })
 
-    // Show the top 5 most recently edited IF the length of the array is greater than 5.
-    let top5Recent = []
+    // Show the top 9 most recently edited IF the length of the array is greater than 5.
+    let top9Recent = []
     if (output.length > 0) {
         // Sort the array by `last_edited` in descending order
         output.sort(function(a, b){
@@ -45,15 +45,15 @@ function RecentNotes(){
         })
 
         // Grab the top 5 most recent items, or all if there are fewer than 5
-        top5Recent = output.slice(0, 5);
+        top9Recent = output.slice(0, 9);
     }
 
     return(
         <div className={styles["recent-notes-container"]}>
-            <div className={styles["recent-notes-title"]}>
+            {/* <div className={styles["recent-notes-title"]}>
                 <strong>Recent Notes</strong>
-            </div>
-            {top5Recent.map((item) => {
+            </div> */}
+            {top9Recent.map((item) => {
                 // Display a recent-note-item. Show the following
                 // 1) notebook_name > note_name
                 // 2) last edited
